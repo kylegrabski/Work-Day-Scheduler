@@ -4,7 +4,7 @@
 var currentDay = moment().format("dddd, MMMM Do YYYY, h:mm a");
 // gets current hour from moment
 var currentHour = moment().format("HH");
-console.log(currentHour)
+console.log(currentHour);
 // variables assigned to HTML elements
 
 // variable linked to our #currentDay HTML element
@@ -23,18 +23,22 @@ function createTimeBlocks(time) {
   // create in JS timeblocks from 9a - 5p (9 - 17) ***LOOK AT OUR HTML AND CSS FOR ID/CLASS NAMES***
 
   var backgroundColor;
+  // if time/i is less then the current hour, add the 'past' style to variable
   if (time < currentHour) {
     backgroundColor = "past";
-  } else if (time === currentHour) {
+  }
+  // if time/i is equal to the current hour, add the 'present' style to variable
+  else if (time === currentHour) {
     backgroundColor = "present";
   } else {
+    // everything left would be in the future, add the 'future' style to variable
     backgroundColor = "future";
   }
-  var timeBlock = $("<div>").addClass("time-block row " + backgroundColor).attr("id", "hour- " + time);
-  
-  
-  
-  return timeBlock;
+  // creating div elem for our timeBlock, with styles that include the backgroundColor. Adds an id of string 'hour-' as well as the hour it relates to.
+  var timeBlock = $("<div>")
+    .addClass("time-block row " + backgroundColor)
+    .attr("id", "hour- " + time);
+
   // can enter text in each timeblock
 
   // timeblocks in past have grey background color(.past in CSS)
@@ -46,4 +50,7 @@ function createTimeBlocks(time) {
   // each timeblock has a save button
 
   // if clicked, the text in the timeblock is saved to local storage.
+
+  // returns timeBlock var data
+  return timeBlock;
 }
