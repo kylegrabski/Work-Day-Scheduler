@@ -53,36 +53,69 @@ function createTimeBlocks(time) {
   var $time = $("<div>").addClass("col-1 hour").text(formatTime(time));
 
   // text area for user to type in timeBlock.
-  var $textArea = $("<textarea>").addClass("col-10 description " + backgroundColor).attr("id", "text-area " + time);
+  var $textArea = $("<textarea>").addClass("col-10 description " + backgroundColor).attr("id", "text-area-" + time);
 
     // create the SAVE BUTTONS
-    $button = $("<button>").addClass("col-1 saveBtn ").attr("id", "save-button " + time).on("click", saveButton(e));
+    $button = $("<button>").addClass("col-1 saveBtn ").attr("id", "save-button-" + time)
 
+    
+    // var userText = localStorage.getItem("User Text");
     // SAVE FUNCTION
-    function saveButton(e){
+    // function saveButton(e){
+      // };
       
-    }
-    
-    // on click, save text area 
-    // prevent default so item persists
+      // on click, save text area 
+      // prevent default so item persists
+      
+      
+      // returns timeBlock var data with text area and save button saved to it
+      return timeBlock.append($time, $textArea, $button);
+      
+      // function to format the time to 12 hour time
+      function formatTime(time) {
+        if (time > 12) {
+          return time - 12 + "PM";
+        } else {
+          return time + "AM";
+        }
+      }
+};
 
-    
-  // returns timeBlock var data with text area and save button saved to it
-  return timeBlock.append($time, $textArea, $button);
 
-  // function to format the time to 12 hour time
-  function formatTime(time) {
-    if (time > 12) {
-      return time - 12 + "PM";
-    } else {
-      return time + "AM";
-    }
-  }
+// -------------------------SAVE BUTTON VARS $ FUNCTIONS-----------------
+
+var $button9 = document.querySelector("#save-button-9");
+var $textArea9 = document.querySelector("#text-area-9");
+
+// SAVE and RENDER it back onto the page
+$button9.addEventListener("click", function(event){
+  // keep page from reloading upon click
+  event.preventDefault();
+
+  // var equal to the content inside #text-area-9
+  var userText = document.querySelector("#text-area-9").value;
+
+  // saves text to local storage
+  localStorage.setItem("User Text 9 AM", userText);
+  console.log(userText)
+  
+  // render text function call
+  // renderUserText();
+
+  // erases local storage
+  // localStorage.clear();
+});
+
+// render text content function
+function renderUserText9(){
+  var content = localStorage.getItem("User Text 9 AM");
+  $textArea9.textContent = content;
 }
+renderUserText9();
 
-// once that works for all, make save button individual for corresponding hour
-
-
+    // once that works for all, make save button individual for corresponding hour
+    
+    
 // can enter text in each timeblock
 
 // timeblocks in past have grey background color(.past in CSS)
