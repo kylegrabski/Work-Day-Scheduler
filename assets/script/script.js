@@ -1,5 +1,5 @@
 
-// ------------------------global variables-------------------
+// ------------------------global variables----------------------------------------
 // gets date from moment and format
 var currentDay = moment().format("dddd, MMMM Do YYYY, h:mm a");
 
@@ -13,7 +13,7 @@ var currentHour = + moment().format("HH");
 var $currentDay = $("#currentDay");
 var $timeBlock = $(".time-block");
 
-// ---------------------------------------------------------------
+// --------------------------------------------------------------------------------
 
 // show present time upon opening
 $currentDay.text(currentDay);
@@ -24,7 +24,7 @@ for (let i = 9; i <= 17; i++) {
   $timeBlock.append(createTimeBlocks(i));
 }
 
-// ------------------------FUNCTIONS--------------------------------
+// ------------------------FUNCTIONS-----------------------------------------------
 
 // populates our content
 function createTimeBlocks(time) {
@@ -82,10 +82,34 @@ function createTimeBlocks(time) {
 };
 
 
-// -------------------------SAVE BUTTON VARS $ FUNCTIONS-----------------
+// -------------------------SAVE BUTTON VARS & FUNCTIONS---------------------------
 
 var $button9 = document.querySelector("#save-button-9");
 var $textArea9 = document.querySelector("#text-area-9");
+
+var $button10 = document.querySelector("#save-button-10");
+var $textArea10 = document.querySelector("#text-area-10");
+
+var $button11 = document.querySelector("#save-button-11");
+var $textArea11 = document.querySelector("#text-area-11");
+
+var $button12 = document.querySelector("#save-button-12");
+var $textArea12 = document.querySelector("#text-area-12");
+
+var $button13 = document.querySelector("#save-button-13");
+var $textArea13 = document.querySelector("#text-area-13");
+
+var $button14 = document.querySelector("#save-button-14");
+var $textArea14 = document.querySelector("#text-area-14");
+
+var $button15 = document.querySelector("#save-button-15");
+var $textArea15 = document.querySelector("#text-area-15");
+
+var $button16 = document.querySelector("#save-button-16");
+var $textArea16 = document.querySelector("#text-area-16");
+
+var $button17 = document.querySelector("#save-button-17");
+var $textArea17 = document.querySelector("#text-area-17");
 
 // SAVE and RENDER it back onto the page
 $button9.addEventListener("click", function(event){
@@ -98,24 +122,111 @@ $button9.addEventListener("click", function(event){
   // saves text to local storage
   localStorage.setItem("User Text 9 AM", userText);
   console.log(userText)
-  
-  // render text function call
-  // renderUserText();
-
-  // erases local storage
-  // localStorage.clear();
 });
+
+// -----------------------BUTTON10-------------------------------------------------
+$button10.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-10").value;
+
+  localStorage.setItem("User Text 10 AM", userText);
+  console.log(userText)
+});
+
+// -----------------------BUTTON11-------------------------------------------------
+$button11.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-11").value;
+
+  localStorage.setItem("User Text 11 AM", userText);
+  console.log(userText)
+});
+
+// -----------------------BUTTON12-------------------------------------------------
+$button12.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-12").value;
+
+  localStorage.setItem("User Text 12 PM", userText);
+  console.log(userText)
+});
+
+// -----------------------BUTTON13-------------------------------------------------
+$button13.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-13").value;
+
+  localStorage.setItem("User Text 1 PM", userText);
+  console.log(userText)
+});
+
+// -----------------------BUTTON14-------------------------------------------------
+$button14.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-14").value;
+
+  localStorage.setItem("User Text 2 PM", userText);
+  console.log(userText)
+});
+
+// -----------------------BUTTON15-------------------------------------------------
+$button15.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-15").value;
+
+  localStorage.setItem("User Text 3 PM", userText);
+  console.log(userText)
+});
+
+// -----------------------BUTTON16-------------------------------------------------
+$button16.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-16").value;
+
+  localStorage.setItem("User Text 4 PM", userText);
+  console.log(userText)
+});
+
+// -----------------------BUTTON17-------------------------------------------------
+$button17.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var userText = document.querySelector("#text-area-17").value;
+
+  localStorage.setItem("User Text 5 PM", userText);
+  console.log(userText)
+});
+
+
+
 
 // render text content function
 function renderUserText9(){
   var content = localStorage.getItem("User Text 9 AM");
   $textArea9.textContent = content;
 }
+
+
 renderUserText9();
 
-    // once that works for all, make save button individual for corresponding hour
-    
-    
+
+
+
+
+
+
+// erases local storage
+// localStorage.clear();
+
+
+
 // can enter text in each timeblock
 
 // timeblocks in past have grey background color(.past in CSS)
