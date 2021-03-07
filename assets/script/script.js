@@ -1,6 +1,6 @@
 
 // ------------------------global variables----------------------------------------
-// gets date from moment and format
+// gets date from moment and formats time
 var currentDay = moment().format("dddd, MMMM Do YYYY, h:mm a");
 
 // gets current hour from moment
@@ -82,7 +82,7 @@ function createTimeBlocks(time) {
 };
 
 
-// *******************SAVE BUTTON VARS & FUNCTIONS*********************************
+// *******************SAVE BUTTON VARS ASSIGNED TO HTML****************************
 
 var $button9 = document.querySelector("#save-button-9");
 var $textArea9 = document.querySelector("#text-area-9");
