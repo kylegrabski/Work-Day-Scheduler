@@ -13,7 +13,7 @@ var currentHour = + moment().format("HH");
 var $currentDay = $("#currentDay");
 var $timeBlock = $(".time-block");
 
-// --------------------------------------------------------------------------------
+// **************************CURRENT TIME******************************************
 
 // show present time upon opening
 $currentDay.text(currentDay);
@@ -24,7 +24,7 @@ for (let i = 9; i <= 17; i++) {
   $timeBlock.append(createTimeBlocks(i));
 }
 
-// ------------------------FUNCTIONS-----------------------------------------------
+// **********************CREATE BTNS AND TEXT AREAS********************************
 
 // populates our content
 function createTimeBlocks(time) {
@@ -82,7 +82,7 @@ function createTimeBlocks(time) {
 };
 
 
-// -------------------------SAVE BUTTON VARS & FUNCTIONS---------------------------
+// *******************SAVE BUTTON VARS & FUNCTIONS*********************************
 
 var $button9 = document.querySelector("#save-button-9");
 var $textArea9 = document.querySelector("#text-area-9");
@@ -111,6 +111,11 @@ var $textArea16 = document.querySelector("#text-area-16");
 var $button17 = document.querySelector("#save-button-17");
 var $textArea17 = document.querySelector("#text-area-17");
 
+
+
+// *********************CREATE SAVE FUNCTION***************************************
+
+// -----------------------BUTTON9--------------------------------------------------
 // SAVE and RENDER it back onto the page
 $button9.addEventListener("click", function(event){
   // keep page from reloading upon click
@@ -207,34 +212,73 @@ $button17.addEventListener("click", function(event){
 
 
 
-// render text content function
+// ****************RENDER TEXT FUNCTIONS*******************************************
+
+// -----------------------BUTTON9--------------------------------------------------
 function renderUserText9(){
   var content = localStorage.getItem("User Text 9 AM");
   $textArea9.textContent = content;
-}
+};
+
+// -----------------------BUTTON10-------------------------------------------------
+function renderUserText10(){
+  var content = localStorage.getItem("User Text 10 AM");
+  $textArea10.textContent = content;
+};
+
+// -----------------------BUTTON11-------------------------------------------------
+function renderUserText11(){
+  var content = localStorage.getItem("User Text 11 AM");
+  $textArea11.textContent = content;
+};
+
+// -----------------------BUTTON12-------------------------------------------------
+function renderUserText12(){
+  var content = localStorage.getItem("User Text 12 PM");
+  $textArea12.textContent = content;
+};
+
+// -----------------------BUTTON13-------------------------------------------------
+function renderUserText13(){
+  var content = localStorage.getItem("User Text 1 PM");
+  $textArea13.textContent = content;
+};
+
+// -----------------------BUTTON14-------------------------------------------------
+function renderUserText14(){
+  var content = localStorage.getItem("User Text 2 PM");
+  $textArea14.textContent = content;
+};
+
+// -----------------------BUTTON15-------------------------------------------------
+function renderUserText15(){
+  var content = localStorage.getItem("User Text 3 PM");
+  $textArea15.textContent = content;
+};
+
+// -----------------------BUTTON16-------------------------------------------------
+function renderUserText16(){
+  var content = localStorage.getItem("User Text 4 PM");
+  $textArea16.textContent = content;
+};
+
+// -----------------------BUTTON17-------------------------------------------------
+function renderUserText17(){
+  var content = localStorage.getItem("User Text 5 PM");
+  $textArea17.textContent = content;
+};
 
 
+// ********************CALL RENDER FUNCTIONS***************************************
 renderUserText9();
-
-
-
-
-
-
+renderUserText10();
+renderUserText11();
+renderUserText12();
+renderUserText13();
+renderUserText14();
+renderUserText15();
+renderUserText16();
+renderUserText17();
 
 // erases local storage
 // localStorage.clear();
-
-
-
-// can enter text in each timeblock
-
-// timeblocks in past have grey background color(.past in CSS)
-
-// timeblock in present has red background color (.present CSS)
-
-// timeblocks in future have green background color (.future in CSS)
-
-// each timeblock has a save button
-
-// if clicked, the text in the timeblock is saved to local storage.
