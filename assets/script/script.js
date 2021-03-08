@@ -56,9 +56,10 @@ function createTimeBlocks(time) {
   var $textArea = $("<textarea>").addClass("col-10 description " + backgroundColor).attr("id", "text-area-" + time);
 
     // create the SAVE BUTTONS
-    $button = $("<button>").addClass("col-1 saveBtn ").attr("id", "save-button-" + time)
+    $button = $("<button>").addClass("col-1 saveBtn ").append($("<i>").addClass("fas fa-save")).attr("id", "save-button-" + time)
 
-    
+// TRY TO GET IT TO SAVE DYNAMICALLY
+
     // var userText = localStorage.getItem("User Text");
     // SAVE FUNCTION
     // function saveButton(e){
@@ -111,7 +112,10 @@ var $textArea16 = document.querySelector("#text-area-16");
 var $button17 = document.querySelector("#save-button-17");
 var $textArea17 = document.querySelector("#text-area-17");
 
+// $(".time-block").each(function() {
+    // const id = $(this).attr("id")
 
+// })
 
 // *********************CREATE SAVE FUNCTION***************************************
 
@@ -122,7 +126,7 @@ $button9.addEventListener("click", function(event){
   event.preventDefault();
 
   // var equal to the content inside #text-area-9
-  var userText = document.querySelector("#text-area-9").value;
+  var userText = $textArea9.value;
 
   // saves text to local storage
   localStorage.setItem("User Text 9 AM", userText);
@@ -133,7 +137,7 @@ $button9.addEventListener("click", function(event){
 $button10.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-10").value;
+  var userText = $textArea10.value;
 
   localStorage.setItem("User Text 10 AM", userText);
   console.log(userText)
@@ -143,7 +147,7 @@ $button10.addEventListener("click", function(event){
 $button11.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-11").value;
+  var userText = $textArea11.value;
 
   localStorage.setItem("User Text 11 AM", userText);
   console.log(userText)
@@ -153,7 +157,7 @@ $button11.addEventListener("click", function(event){
 $button12.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-12").value;
+  var userText = $textArea12.value;
 
   localStorage.setItem("User Text 12 PM", userText);
   console.log(userText)
@@ -163,7 +167,7 @@ $button12.addEventListener("click", function(event){
 $button13.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-13").value;
+  var userText = $textArea13.value;
 
   localStorage.setItem("User Text 1 PM", userText);
   console.log(userText)
@@ -173,7 +177,7 @@ $button13.addEventListener("click", function(event){
 $button14.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-14").value;
+  var userText = $textArea14.value;
 
   localStorage.setItem("User Text 2 PM", userText);
   console.log(userText)
@@ -183,7 +187,7 @@ $button14.addEventListener("click", function(event){
 $button15.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-15").value;
+  var userText = $textArea15.value;
 
   localStorage.setItem("User Text 3 PM", userText);
   console.log(userText)
@@ -193,7 +197,7 @@ $button15.addEventListener("click", function(event){
 $button16.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-16").value;
+  var userText = $textArea16.value;
 
   localStorage.setItem("User Text 4 PM", userText);
   console.log(userText)
@@ -203,7 +207,7 @@ $button16.addEventListener("click", function(event){
 $button17.addEventListener("click", function(event){
   event.preventDefault();
   
-  var userText = document.querySelector("#text-area-17").value;
+  var userText = $textArea17.value;
 
   localStorage.setItem("User Text 5 PM", userText);
   console.log(userText)
