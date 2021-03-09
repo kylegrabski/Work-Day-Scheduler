@@ -8,6 +8,10 @@
 
 <br><br>
 
+Enter text in the center column, click on the corresponding blue SAVE button to save the text.
+
+<br>
+
 ```md
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
@@ -28,3 +32,6 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
+<br>
+
+![screenshot](./assets/img/screenshot.png)
