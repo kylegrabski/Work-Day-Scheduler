@@ -1,11 +1,10 @@
-
 // ------------------------global variables----------------------------------------
 // gets date from moment and formats time
 var currentDay = moment().format("dddd, MMMM Do YYYY, h:mm a");
 
 // gets current hour from moment
 // DOUBLE CHECK + OPERATOR
-var currentHour = + moment().format("HH");
+var currentHour = +moment().format("HH");
 
 // -------------------------assigned to HTML---------------------------------------
 
@@ -28,7 +27,7 @@ for (let i = 9; i <= 17; i++) {
 
 // populates our content
 function createTimeBlocks(time) {
-  // create in JS timeblocks from 9a - 5p (9 - 17) 
+  // create in JS timeblocks from 9a - 5p (9 - 17)
 
   var backgroundColor;
 
@@ -38,50 +37,44 @@ function createTimeBlocks(time) {
   }
 
   // if time/i is equal to the current hour, add the 'present' style to variable
-
   else if (time === currentHour) {
     backgroundColor = "present";
   } else {
     // everything left would be in the future, add the 'future' style to variable
     backgroundColor = "future";
-  };
+  }
 
   // creating div elem for our timeBlock
-  var timeBlock = $("<div>").addClass("time-block row ").attr("id", "hour-" + time);
+  var timeBlock = $("<div>")
+    .addClass("time-block row ")
+    .attr("id", "hour-" + time);
 
   // showing the time on the side of the timeBlock
   var $time = $("<div>").addClass("col-1 hour").text(formatTime(time));
 
   // text area for user to type in timeBlock.
-  var $textArea = $("<textarea>").addClass("col-10 description " + backgroundColor).attr("id", "text-area-" + time);
+  var $textArea = $("<textarea>")
+    .addClass("col-10 description " + backgroundColor)
+    .attr("id", "text-area-" + time);
 
-    // create the SAVE BUTTONS
-    $button = $("<button>").addClass("col-1 saveBtn ").append($("<i>").addClass("fas fa-save")).attr("id", "save-button-" + time)
+  // create the SAVE BUTTONS
+  $button = $("<button>")
+    .addClass("col-1 saveBtn ")
+    .append($("<i>").addClass("fas fa-save"))
+    .attr("id", "save-button-" + time);
 
-// TRY TO GET IT TO SAVE DYNAMICALLY
+  // returns timeBlock var data with text area and save button saved to it
+  return timeBlock.append($time, $textArea, $button);
 
-    // var userText = localStorage.getItem("User Text");
-    // SAVE FUNCTION
-    // function saveButton(e){
-      // };
-      
-      // on click, save text area 
-      // prevent default so item persists
-      
-      
-      // returns timeBlock var data with text area and save button saved to it
-      return timeBlock.append($time, $textArea, $button);
-      
-      // function to format the time to 12 hour time
-      function formatTime(time) {
-        if (time > 12) {
-          return time - 12 + "PM";
-        } else {
-          return time + "AM";
-        }
-      }
-};
-
+  // function to format the time to 12 hour time
+  function formatTime(time) {
+    if (time > 12) {
+      return time - 12 + "PM";
+    } else {
+      return time + "AM";
+    }
+  }
+}
 
 // *******************SAVE BUTTON VARS ASSIGNED TO HTML****************************
 
@@ -112,16 +105,11 @@ var $textArea16 = document.querySelector("#text-area-16");
 var $button17 = document.querySelector("#save-button-17");
 var $textArea17 = document.querySelector("#text-area-17");
 
-// $(".time-block").each(function() {
-    // const id = $(this).attr("id")
-
-// })
-
 // *********************CREATE SAVE FUNCTION***************************************
 
 // -----------------------BUTTON9--------------------------------------------------
 // SAVE and RENDER it back onto the page
-$button9.addEventListener("click", function(event){
+$button9.addEventListener("click", function (event) {
   // keep page from reloading upon click
   event.preventDefault();
 
@@ -130,148 +118,135 @@ $button9.addEventListener("click", function(event){
 
   // saves text to local storage
   localStorage.setItem("User Text 9 AM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON10-------------------------------------------------
-$button10.addEventListener("click", function(event){
+$button10.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea10.value;
 
   localStorage.setItem("User Text 10 AM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON11-------------------------------------------------
-$button11.addEventListener("click", function(event){
+$button11.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea11.value;
 
   localStorage.setItem("User Text 11 AM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON12-------------------------------------------------
-$button12.addEventListener("click", function(event){
+$button12.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea12.value;
 
   localStorage.setItem("User Text 12 PM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON13-------------------------------------------------
-$button13.addEventListener("click", function(event){
+$button13.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea13.value;
 
   localStorage.setItem("User Text 1 PM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON14-------------------------------------------------
-$button14.addEventListener("click", function(event){
+$button14.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea14.value;
 
   localStorage.setItem("User Text 2 PM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON15-------------------------------------------------
-$button15.addEventListener("click", function(event){
+$button15.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea15.value;
 
   localStorage.setItem("User Text 3 PM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON16-------------------------------------------------
-$button16.addEventListener("click", function(event){
+$button16.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea16.value;
 
   localStorage.setItem("User Text 4 PM", userText);
-  console.log(userText)
 });
 
 // -----------------------BUTTON17-------------------------------------------------
-$button17.addEventListener("click", function(event){
+$button17.addEventListener("click", function (event) {
   event.preventDefault();
-  
+
   var userText = $textArea17.value;
 
   localStorage.setItem("User Text 5 PM", userText);
-  console.log(userText)
 });
-
-
-
 
 // ****************RENDER TEXT FUNCTIONS*******************************************
 
 // -----------------------BUTTON9--------------------------------------------------
-function renderUserText9(){
+function renderUserText9() {
   var content = localStorage.getItem("User Text 9 AM");
   $textArea9.textContent = content;
-};
+}
 
 // -----------------------BUTTON10-------------------------------------------------
-function renderUserText10(){
+function renderUserText10() {
   var content = localStorage.getItem("User Text 10 AM");
   $textArea10.textContent = content;
-};
+}
 
 // -----------------------BUTTON11-------------------------------------------------
-function renderUserText11(){
+function renderUserText11() {
   var content = localStorage.getItem("User Text 11 AM");
   $textArea11.textContent = content;
-};
+}
 
 // -----------------------BUTTON12-------------------------------------------------
-function renderUserText12(){
+function renderUserText12() {
   var content = localStorage.getItem("User Text 12 PM");
   $textArea12.textContent = content;
-};
+}
 
 // -----------------------BUTTON13-------------------------------------------------
-function renderUserText13(){
+function renderUserText13() {
   var content = localStorage.getItem("User Text 1 PM");
   $textArea13.textContent = content;
-};
+}
 
 // -----------------------BUTTON14-------------------------------------------------
-function renderUserText14(){
+function renderUserText14() {
   var content = localStorage.getItem("User Text 2 PM");
   $textArea14.textContent = content;
-};
+}
 
 // -----------------------BUTTON15-------------------------------------------------
-function renderUserText15(){
+function renderUserText15() {
   var content = localStorage.getItem("User Text 3 PM");
   $textArea15.textContent = content;
-};
+}
 
 // -----------------------BUTTON16-------------------------------------------------
-function renderUserText16(){
+function renderUserText16() {
   var content = localStorage.getItem("User Text 4 PM");
   $textArea16.textContent = content;
-};
+}
 
 // -----------------------BUTTON17-------------------------------------------------
-function renderUserText17(){
+function renderUserText17() {
   var content = localStorage.getItem("User Text 5 PM");
   $textArea17.textContent = content;
-};
-
+}
 
 // ********************CALL RENDER FUNCTIONS***************************************
 renderUserText9();
